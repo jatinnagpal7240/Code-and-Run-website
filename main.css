@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #daa520;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure elements are spaced properly */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* Ensures children align correctly */
+}
+
+.navbar img {
+  height: 60px; /* Adjust as needed */
+  margin-right: 200px;
+}
+
+/* Typewriter Text */
+.typewriter-container {
+  display: flex;
+  align-items: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  flex: 1; /* Helps distribute space evenly */
+  margin-left: auto; /* Pushes it towards the center */
+  margin-right: auto; /* Centers it in the remaining space */
+}
+
+.dynamic-text {
+  /* margin-left: 5px; */
+  border-right: 3px solid rgb(255, 255, 255); /* Cursor effect */
+  padding-right: 5px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Menu - Navbar */
+/* Styling for menu icon */
+.menu-icon {
+  width: 35px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: absolute;
+  right: 40px; /* Keeps it on the right side */
+  top: 50%;
+  transform: translateY(-50%); /* Centers it vertically */
+  z-index: 1001;
+}
+
+.menu-icon span {
+  display: block;
+  width: 90%;
+  height: 2px;
+  background-color: black;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Proper X Transformation */
+.menu-icon.active span:nth-child(1) {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+/* Full-Screen Menu */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100vh;
+  background: rgba(218, 165, 32);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.menu-overlay.active {
+  transform: translateY(0);
+}
+
+.menu-overlay ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.menu-overlay ul li {
+  margin: 20px 0;
+}
+
+.menu-overlay ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.menu-overlay ul li a:hover {
+  color: black; /* Black hover effect */
+}
+/* Menu ends */
+
+/* Active Courses Section */
+#active-courses {
+  text-align: left;
+  padding: 50px 20px;
+  background-color: rgba(218, 165, 32, 0.3);
+}
+#active-courses h1 {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.course-container {
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.course-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+.course-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.enroll-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.enroll-btn:hover {
+  background-color: #0056b3;
+}
+/* Active courses end */
